@@ -31,6 +31,9 @@
                             <constraint firstItem="6vm-n4-DjF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="kWo-5i-RAJ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="scrollView" destination="6vm-n4-DjF" id="R8k-xU-AJv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

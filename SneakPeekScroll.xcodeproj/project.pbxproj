@@ -12,6 +12,7 @@
 		7EFC978C1BA4E04800DAA4E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EFC978A1BA4E04800DAA4E4 /* Main.storyboard */; };
 		7EFC978E1BA4E04800DAA4E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7EFC978D1BA4E04800DAA4E4 /* Assets.xcassets */; };
 		7EFC97911BA4E04800DAA4E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EFC978F1BA4E04800DAA4E4 /* LaunchScreen.storyboard */; };
+		7EFC979B1BA4E44700DAA4E4 /* iiAutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFC979A1BA4E44700DAA4E4 /* iiAutoLayout.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		7EFC978D1BA4E04800DAA4E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7EFC97901BA4E04800DAA4E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7EFC97921BA4E04800DAA4E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7EFC979A1BA4E44700DAA4E4 /* iiAutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iiAutoLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				7EFC978D1BA4E04800DAA4E4 /* Assets.xcassets */,
 				7EFC978F1BA4E04800DAA4E4 /* LaunchScreen.storyboard */,
 				7EFC97921BA4E04800DAA4E4 /* Info.plist */,
+				7EFC979A1BA4E44700DAA4E4 /* iiAutoLayout.swift */,
 			);
 			path = SneakPeekScroll;
 			sourceTree = "<group>";
@@ -136,6 +139,7 @@
 			files = (
 				7EFC97891BA4E04800DAA4E4 /* ViewController.swift in Sources */,
 				7EFC97871BA4E04800DAA4E4 /* AppDelegate.swift in Sources */,
+				7EFC979B1BA4E44700DAA4E4 /* iiAutoLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,7 +201,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -236,7 +240,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
