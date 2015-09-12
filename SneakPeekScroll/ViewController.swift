@@ -60,7 +60,7 @@ class ViewController: UIViewController {
   }
   
   private func style(view: UIView) {
-    view.backgroundColor = UIColor.redColor()
+    view.backgroundColor = RandomColor.get
   }
 }
 
