@@ -63,7 +63,7 @@ class ViewController: UIViewController {
     view.backgroundColor = RandomColor.get
   }
   
-  // Make the satus bar light
+  // Make the status bar light
   override func preferredStatusBarStyle() -> UIStatusBarStyle {
     return UIStatusBarStyle.LightContent
   }
