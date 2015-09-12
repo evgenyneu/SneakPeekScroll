@@ -76,7 +76,7 @@ class iiAutolayoutConstraints {
     multiplier: CGFloat = 1)  -> [NSLayoutConstraint] {
     
     return equalWidthOrHeight(viewOne, viewTwo: viewTwo,
-      constraintContainer: constraintContainer, isHeight: false)
+      constraintContainer: constraintContainer, isHeight: false, multiplier: multiplier)
   }
   
   private class func equalWidthOrHeight(viewOne: UIView, viewTwo: UIView, constraintContainer: UIView,

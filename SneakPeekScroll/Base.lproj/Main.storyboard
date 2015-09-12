@@ -23,7 +23,7 @@
                                 <color key="backgroundColor" red="0.98255212101718492" green="0.98496612781354365" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" red="0.0012275773895479424" green="0.61487926136363635" blue="0.080142942022403532" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.11372549019607843" blue="0.015686274509803921" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="6vm-n4-DjF" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="9vs-ba-z7e"/>
                             <constraint firstItem="6vm-n4-DjF" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Kim-SP-Ze2"/>

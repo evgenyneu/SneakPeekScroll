@@ -38,9 +38,9 @@ class ViewController: UIViewController {
     subview.translatesAutoresizingMaskIntoConstraints = false
     scrollView.addSubview(subview)
     
-    // Make the width of the subview equal to 80% of the scroll view width
+    // Make the width of the subview equal to 90% of the scroll view width
     iiAutolayoutConstraints.equalWidth(subview, viewTwo: scrollView,
-      constraintContainer: scrollView, multiplier: 0.8)
+      constraintContainer: scrollView, multiplier: 0.9)
     
     // Make heiht of the subview the same as the scroll view
     iiAutolayoutConstraints.fillParent(subview, parentView: scrollView, margin: 0,
@@ -61,6 +61,11 @@ class ViewController: UIViewController {
   
   private func style(view: UIView) {
     view.backgroundColor = RandomColor.get
+  }
+  
+  // Make the satus bar light
+  override func preferredStatusBarStyle() -> UIStatusBarStyle {
+    return UIStatusBarStyle.LightContent
   }
 }
 
