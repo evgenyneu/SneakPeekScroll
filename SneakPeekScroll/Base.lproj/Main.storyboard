@@ -20,7 +20,6 @@
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6vm-n4-DjF">
                                 <rect key="frame" x="0.0" y="150" width="600" height="300"/>
-                                <color key="backgroundColor" red="0.98255212101718492" green="0.98496612781354365" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.11372549019607843" blue="0.015686274509803921" alpha="1" colorSpace="calibratedRGB"/>
