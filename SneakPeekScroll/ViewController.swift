@@ -52,8 +52,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
   
   /// Add all the subviews to the scroll view
   private func addViews() {
-    // Create subviews
-    var subviews = (1...numberOfSubviews).map { _ in addSingleView() }
+    // Create content subviews
+    var subviews = (1...numberOfSubviews).map { i in addContentView(i) }
     
     aSubview = subviews.first ?? UIView()
     
@@ -79,22 +79,9 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     styleSubviews(subviews)
   }
   
-  private func createSpacerViews(var subviews: [UIView]) -> [UIView] {
-    //  Please the first one at the front
-    let frontSpacerView = addSpacerView()
-    aSpacer = frontSpacerView
-    subviews.insert(frontSpacerView, atIndex: 0)
-    
-    // Place the the other at the back of the subviews
-    let backSpacerView = addSpacerView()
-    subviews.append(backSpacerView)
-    
-    return subviews
-  }
-  
-  /// Add a subview to the scroll view
-  private func addSingleView() -> UIView {
-    let subview = UIView()
+  /// Add a content subview to the scroll view
+  private func addContentView(pageIndex: Int) -> UIView {
+    let subview = ContentView()
     subview.translatesAutoresizingMaskIntoConstraints = false
     scrollView.addSubview(subview)
     
@@ -111,6 +98,19 @@ class ViewController: UIViewController, UIScrollViewDelegate {
       constraintContainer: scrollView, attribute: NSLayoutAttribute.CenterY)
     
     return subview
+  }
+  
+  private func createSpacerViews(var subviews: [UIView]) -> [UIView] {
+    //  Please the first one at the front
+    let frontSpacerView = addSpacerView()
+    aSpacer = frontSpacerView
+    subviews.insert(frontSpacerView, atIndex: 0)
+    
+    // Place the the other at the back of the subviews
+    let backSpacerView = addSpacerView()
+    subviews.append(backSpacerView)
+    
+    return subviews
   }
   
   /// Add a view that that reserves a space in front of the first subview and after the last subview
