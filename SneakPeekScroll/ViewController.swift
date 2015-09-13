@@ -29,6 +29,27 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     addViews()
   }
   
+  /// Animate scroll view on orientation change
+  override func viewWillTransitionToSize(size: CGSize,
+    withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+      
+    super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
+    
+    // Preserve the current page during orientation change
+      
+    let pageIndexBeforeRotation = currentPageIndex
+    
+    coordinator.animateAlongsideTransition({ [weak self] _ in
+      self?.scrollToPage(pageIndexBeforeRotation)
+    }, completion: nil)
+  }
+  
+  private func scrollToPage(page: Int) {
+    let newContentOffsetX = calculateOffsetBasedOnPage(page)
+    let newContentOffset: CGPoint = CGPoint(x: newContentOffsetX, y: 0)
+    scrollView.setContentOffset(newContentOffset, animated: false)
+  }
+  
   /// Add all the subviews to the scroll view
   private func addViews() {
     // Create subviews
@@ -141,10 +162,15 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     return aSpacer.bounds.width
   }
   
-  /// Returns the page number for a given scroll view offset.
-  func calculatePageBasedOnOffset(var offset: CGFloat) -> CGFloat {
+  /// Returns the index of the current page
+  var currentPageIndex: Int {
+    return calculatePageIndexBasedOnOffset(scrollView.contentOffset.x)
+  }
+  
+  /// Returns the page index for a given scroll view offset.
+  func calculatePageIndexBasedOnOffset(var offset: CGFloat) -> Int {
     offset -= spacerWidth
-    return offset / subviewWidth
+    return Int(round(offset / subviewWidth))
   }
   
   /// Returns the offset needed to display the given page
@@ -163,10 +189,10 @@ class ViewController: UIViewController, UIScrollViewDelegate {
   func scrollViewWillEndDragging(scrollView: UIScrollView, withVelocity velocity: CGPoint,
     targetContentOffset: UnsafeMutablePointer<CGPoint>) {
       
-    let page = calculatePageBasedOnOffset(targetContentOffset.memory.x)
-    var correctedOffset = calculateOffsetBasedOnPage(Int(round(page)))
+    let pageIndex = calculatePageIndexBasedOnOffset(targetContentOffset.memory.x)
+    var correctedOffset = calculateOffsetBasedOnPage(pageIndex)
       
-    if isLastPage(Int(round(page))) {
+    if isLastPage(pageIndex) {
       // Workaround a bug that prevents scrolling to the last page from the second to last page
       correctedOffset -= 2
     }
