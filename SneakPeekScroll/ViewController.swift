@@ -1,13 +1,27 @@
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIScrollViewDelegate {
   @IBOutlet weak var scrollView: UIScrollView!
 
   // Width of each subview relative to the scroll view width
   let subviewWidthRatio: CGFloat = 0.8
+  
+  // Will contain one of the subviews. It will be used for get the width of a subview
+  // for calculating the scroll view offset
+  var aSubview = UIView()
+  
+  // Will contain one of the spacers. It will be used for get the width of a subview
+  // for calculating the scroll view offset.
+  var aSpacer = UIView()
 
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    scrollView.delegate = self
+    scrollView.showsHorizontalScrollIndicator = false
+    
+    // Makes scroll view speed close to the one in the paged scroll view mode
+    scrollView.decelerationRate = UIScrollViewDecelerationRateFast
 
     addViews()
   }
@@ -16,6 +30,8 @@ class ViewController: UIViewController {
   private func addViews() {
     // Create subviews
     var subviews = (1...10).map { _ in addSingleView() }
+    
+    aSubview = subviews.first ?? UIView()
     
     // Create two spacer views
     subviews = createSpacerViews(subviews)
@@ -42,6 +58,7 @@ class ViewController: UIViewController {
   private func createSpacerViews(var subviews: [UIView]) -> [UIView] {
     //  Please the first one at the front
     let frontSpacerView = addSpacerView()
+    aSpacer = frontSpacerView
     subviews.insert(frontSpacerView, atIndex: 0)
     
     // Place the the other at the back of the subviews
@@ -107,6 +124,68 @@ class ViewController: UIViewController {
   // Make the status bar light
   override func preferredStatusBarStyle() -> UIStatusBarStyle {
     return UIStatusBarStyle.LightContent
+  }
+  
+  // MARK: - Calculating scroll view offset
+  
+  /// Current width of a subview
+  var subviewWidth: CGFloat {
+    return aSubview.bounds.width
+  }
+  
+  /// Current width of a spacer
+  var spacerWidth: CGFloat {
+    return aSpacer.bounds.width
+  }
+  
+  /// Current width of scroll view content
+  var contentWidth: CGFloat {
+    return scrollView.contentSize.width
+  }
+  
+  /// Returns the page number for a given scroll view offset.
+  func calculatePageBasedOnOffset(var offset: CGFloat) -> CGFloat {
+    offset -= spacerWidth
+    return offset / subviewWidth
+  }
+  
+  /// Returns the offset needed to display the given page
+  func calculateOffsetBasedOnPage(page: Int) -> CGFloat {
+    return CGFloat(page) * subviewWidth
+  }
+  
+  // MARK: UIScrollViewDelegate
+  // ------------------------------
+  
+  func scrollViewWillEndDragging(scrollView: UIScrollView, withVelocity velocity: CGPoint,
+    targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+      
+    let page = calculatePageBasedOnOffset(targetContentOffset.memory.x)
+      
+    let proposedOffset = targetContentOffset.memory.x
+    let correctedOffset = calculateOffsetBasedOnPage(Int(round(page)))
+    let currentOffset = scrollView.contentOffset.x
+
+    let proposedAndCorrectedAreOpposite = (proposedOffset < currentOffset && correctedOffset > currentOffset) ||
+      (proposedOffset > currentOffset && correctedOffset < currentOffset)
+      
+    if proposedAndCorrectedAreOpposite {
+      if abs(velocity.x) > 0.5 {
+        // Enough speed is applied - scroll to next item instead
+        let directionMultiplier:CGFloat = velocity.x > 0 ? 1 : -1
+        targetContentOffset.memory.x = calculateOffsetBasedOnPage(Int(round(page + directionMultiplier)))
+      } else {
+        // If proposed and corrected offset will move content in different direction
+        // We need to stop scrolling and animate offset manually
+        // Otherwise - it will produce unpleasant jump
+        targetContentOffset.memory.x = currentOffset
+        scrollView.setContentOffset(CGPoint(x: correctedOffset, y: targetContentOffset.memory.y), animated: true)
+      }
+    } else {
+      targetContentOffset.memory.x = correctedOffset
+    }
+      
+//    print("Offset: \(targetContentOffset.memory.x) page: \(page) new offset: \(offset)")
   }
 }
 
