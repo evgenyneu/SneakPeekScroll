@@ -6,6 +6,9 @@ class ViewController: UIViewController, UIScrollViewDelegate {
   // Width of each subview relative to the scroll view width
   let subviewWidthRatio: CGFloat = 0.8
   
+  // The number of content views we want to show in the scroll view
+  let numberOfSubviews = 10
+  
   // Will contain one of the subviews. It will be used for get the width of a subview
   // for calculating the scroll view offset
   var aSubview = UIView()
@@ -29,7 +32,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
   /// Add all the subviews to the scroll view
   private func addViews() {
     // Create subviews
-    var subviews = (1...10).map { _ in addSingleView() }
+    var subviews = (1...numberOfSubviews).map { _ in addSingleView() }
     
     aSubview = subviews.first ?? UIView()
     
@@ -95,7 +98,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     subview.translatesAutoresizingMaskIntoConstraints = false
     scrollView.addSubview(subview)
     
-    let spacerWidthRatio = (1 - subviewWidthRatio) / 2
+    var spacerWidthRatio: CGFloat = (1 - subviewWidthRatio) / 2
     
     // Make the width of the spacer view equal to 'spacerWidthRatio' of the scroll view width
     iiAutolayoutConstraints.equalWidth(subview, viewTwo: scrollView,
@@ -138,11 +141,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     return aSpacer.bounds.width
   }
   
-  /// Current width of scroll view content
-  var contentWidth: CGFloat {
-    return scrollView.contentSize.width
-  }
-  
   /// Returns the page number for a given scroll view offset.
   func calculatePageBasedOnOffset(var offset: CGFloat) -> CGFloat {
     offset -= spacerWidth
@@ -154,38 +152,26 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     return CGFloat(page) * subviewWidth
   }
   
+  func isLastPage(page: Int) -> Bool {
+    return page == numberOfSubviews - 1
+  }
+  
   // MARK: UIScrollViewDelegate
   // ------------------------------
   
+  // Show the views at the center of the screen after user has finished scrolling.
   func scrollViewWillEndDragging(scrollView: UIScrollView, withVelocity velocity: CGPoint,
     targetContentOffset: UnsafeMutablePointer<CGPoint>) {
       
     let page = calculatePageBasedOnOffset(targetContentOffset.memory.x)
+    var correctedOffset = calculateOffsetBasedOnPage(Int(round(page)))
       
-    let proposedOffset = targetContentOffset.memory.x
-    let correctedOffset = calculateOffsetBasedOnPage(Int(round(page)))
-    let currentOffset = scrollView.contentOffset.x
-
-    let proposedAndCorrectedAreOpposite = (proposedOffset < currentOffset && correctedOffset > currentOffset) ||
-      (proposedOffset > currentOffset && correctedOffset < currentOffset)
-      
-    if proposedAndCorrectedAreOpposite {
-      if abs(velocity.x) > 0.5 {
-        // Enough speed is applied - scroll to next item instead
-        let directionMultiplier:CGFloat = velocity.x > 0 ? 1 : -1
-        targetContentOffset.memory.x = calculateOffsetBasedOnPage(Int(round(page + directionMultiplier)))
-      } else {
-        // If proposed and corrected offset will move content in different direction
-        // We need to stop scrolling and animate offset manually
-        // Otherwise - it will produce unpleasant jump
-        targetContentOffset.memory.x = currentOffset
-        scrollView.setContentOffset(CGPoint(x: correctedOffset, y: targetContentOffset.memory.y), animated: true)
-      }
-    } else {
-      targetContentOffset.memory.x = correctedOffset
+    if isLastPage(Int(round(page))) {
+      // Workaround a bug that prevents scrolling to the last page from the second to last page
+      correctedOffset -= 2
     }
       
-//    print("Offset: \(targetContentOffset.memory.x) page: \(page) new offset: \(offset)")
+    targetContentOffset.memory.x = correctedOffset
   }
 }
 
