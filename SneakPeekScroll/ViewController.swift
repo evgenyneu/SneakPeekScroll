@@ -74,14 +74,11 @@ class ViewController: UIViewController, UIScrollViewDelegate {
       iiAutolayoutConstraints.alignSameAttributes(lastSubview, toItem: scrollView,
         constraintContainer: scrollView, attribute: NSLayoutAttribute.Trailing)
     }
-    
-    // Style the subview
-    styleSubviews(subviews)
   }
   
   /// Add a content subview to the scroll view
   private func addContentView(pageIndex: Int) -> UIView {
-    let subview = ContentView()
+    let subview = ContentView(pageIndex: pageIndex)
     subview.translatesAutoresizingMaskIntoConstraints = false
     scrollView.addSubview(subview)
     
@@ -119,7 +116,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     subview.translatesAutoresizingMaskIntoConstraints = false
     scrollView.addSubview(subview)
     
-    var spacerWidthRatio: CGFloat = (1 - subviewWidthRatio) / 2
+    let spacerWidthRatio: CGFloat = (1 - subviewWidthRatio) / 2
     
     // Make the width of the spacer view equal to 'spacerWidthRatio' of the scroll view width
     iiAutolayoutConstraints.equalWidth(subview, viewTwo: scrollView,
@@ -133,16 +130,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
       constraintContainer: scrollView, attribute: NSLayoutAttribute.CenterY)
     
     return subview
-  }
-  
-  private func styleSubviews(views: [UIView]) {
-    for view in views {
-      style(view)
-    }
-  }
-  
-  private func style(view: UIView) {
-    view.backgroundColor = RandomColor.get
   }
   
   // Make the status bar light

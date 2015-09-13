@@ -1,5 +1,5 @@
 struct iiImages {
-  private var imageNmaes = [
+  private static var imageNmaes = [
     "AcanthochoerusGroteiSmit.jpg",
     "AnthusButleriSmit.jpg",
     "BradypterusSylvaticusSmit.jpg",
@@ -12,7 +12,7 @@ struct iiImages {
     "Hypothymis_coelestis_coelestis_Smit.jpg"
   ]
   
-  func imageName(var pageIndex: Int) -> String {
+  static func imageName(var pageIndex: Int) -> String {
     pageIndex = pageIndex % imageNmaes.count
     return imageNmaes[pageIndex]
   }

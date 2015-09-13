@@ -141,45 +141,4 @@ class iiAutolayoutConstraints {
     
     return [constraint]
   }
-
-  
-    //
-    //  class func equalWidth(viewOne: UIView, viewTwo: UIView, constraintContainer: UIView) -> [NSLayoutConstraint] {
-    //
-    //    return equalWidthOrHeight(viewOne, viewTwo: viewTwo, constraintContainer: constraintContainer, isHeight: false)
-    //  }
-    //
-    //  // MARK: - Equal height and width
-    //
-    //  class func equalHeight(viewOne: UIView, viewTwo: UIView, constraintContainer: UIView) -> [NSLayoutConstraint] {
-    //
-    //    return equalWidthOrHeight(viewOne, viewTwo: viewTwo, constraintContainer: constraintContainer, isHeight: true)
-    //  }
-    //
-    //  class func equalSize(viewOne: UIView, viewTwo: UIView, constraintContainer: UIView) -> [NSLayoutConstraint] {
-    //
-    //    var constraints = equalWidthOrHeight(viewOne, viewTwo: viewTwo, constraintContainer: constraintContainer, isHeight: false)
-    //
-    //    constraints += equalWidthOrHeight(viewOne, viewTwo: viewTwo, constraintContainer: constraintContainer, isHeight: true)
-    //
-    //    return constraints
-    //  }
-    //
-    //  class func equalWidthOrHeight(viewOne: UIView, viewTwo: UIView, constraintContainer: UIView,
-    //    isHeight: Bool) -> [NSLayoutConstraint] {
-    //
-    //    var prefix = ""
-    //
-    //    if isHeight { prefix = "V:" }
-    //
-    //    let constraints = NSLayoutConstraint.constraintsWithVisualFormat("\(prefix)[viewOne(==viewTwo)]",
-    //      options: [], metrics: nil,
-    //      views: ["viewOne": viewOne, "viewTwo": viewTwo])
-    //
-    //    constraintContainer.addConstraints(constraints)
-    //
-    //    return constraints
-    //  }
-    //
-    //
 }

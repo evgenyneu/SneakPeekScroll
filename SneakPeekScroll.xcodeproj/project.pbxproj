@@ -7,9 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7E524C2F1BA509D700565052 /* Images in Resources */ = {isa = PBXBuildFile; fileRef = 7E524C2E1BA509D700565052 /* Images */; settings = {ASSET_TAGS = (); }; };
 		7E524C311BA509F200565052 /* iiImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E524C301BA509F200565052 /* iiImages.swift */; settings = {ASSET_TAGS = (); }; };
 		7E524C331BA50B2600565052 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E524C321BA50B2600565052 /* ContentView.swift */; settings = {ASSET_TAGS = (); }; };
+		7E524C531BA50E1700565052 /* AcanthochoerusGroteiSmit.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7E524C491BA50E1700565052 /* AcanthochoerusGroteiSmit.jpg */; settings = {ASSET_TAGS = (); }; };
+		7E524C541BA50E1700565052 /* AnthusButleriSmit.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7E524C4A1BA50E1700565052 /* AnthusButleriSmit.jpg */; settings = {ASSET_TAGS = (); }; };
+		7E524C551BA50E1700565052 /* BradypterusSylvaticusSmit.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7E524C4B1BA50E1700565052 /* BradypterusSylvaticusSmit.jpg */; settings = {ASSET_TAGS = (); }; };
+		7E524C561BA50E1700565052 /* CervicapraThomasinaeSmit.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7E524C4C1BA50E1700565052 /* CervicapraThomasinaeSmit.jpg */; settings = {ASSET_TAGS = (); }; };
+		7E524C571BA50E1700565052 /* ChirogaleusMiliiSmit.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7E524C4D1BA50E1700565052 /* ChirogaleusMiliiSmit.jpg */; settings = {ASSET_TAGS = (); }; };
+		7E524C581BA50E1700565052 /* Chlorophonia_flavirostris.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7E524C4E1BA50E1700565052 /* Chlorophonia_flavirostris.jpg */; settings = {ASSET_TAGS = (); }; };
+		7E524C591BA50E1700565052 /* DendrohyraxEminiSmit.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7E524C4F1BA50E1700565052 /* DendrohyraxEminiSmit.jpg */; settings = {ASSET_TAGS = (); }; };
+		7E524C5A1BA50E1700565052 /* HerpestesFerrugineusSmit.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7E524C501BA50E1700565052 /* HerpestesFerrugineusSmit.jpg */; settings = {ASSET_TAGS = (); }; };
+		7E524C5B1BA50E1700565052 /* HolacanthusIgnatiusSmit.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7E524C511BA50E1700565052 /* HolacanthusIgnatiusSmit.jpg */; settings = {ASSET_TAGS = (); }; };
+		7E524C5C1BA50E1700565052 /* Hypothymis_coelestis_coelestis_Smit.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7E524C521BA50E1700565052 /* Hypothymis_coelestis_coelestis_Smit.jpg */; settings = {ASSET_TAGS = (); }; };
 		7EFC97871BA4E04800DAA4E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFC97861BA4E04800DAA4E4 /* AppDelegate.swift */; };
 		7EFC97891BA4E04800DAA4E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFC97881BA4E04800DAA4E4 /* ViewController.swift */; };
 		7EFC978C1BA4E04800DAA4E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EFC978A1BA4E04800DAA4E4 /* Main.storyboard */; };
@@ -20,9 +29,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7E524C2E1BA509D700565052 /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
 		7E524C301BA509F200565052 /* iiImages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iiImages.swift; sourceTree = "<group>"; };
 		7E524C321BA50B2600565052 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7E524C491BA50E1700565052 /* AcanthochoerusGroteiSmit.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = AcanthochoerusGroteiSmit.jpg; path = Images/AcanthochoerusGroteiSmit.jpg; sourceTree = "<group>"; };
+		7E524C4A1BA50E1700565052 /* AnthusButleriSmit.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = AnthusButleriSmit.jpg; path = Images/AnthusButleriSmit.jpg; sourceTree = "<group>"; };
+		7E524C4B1BA50E1700565052 /* BradypterusSylvaticusSmit.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = BradypterusSylvaticusSmit.jpg; path = Images/BradypterusSylvaticusSmit.jpg; sourceTree = "<group>"; };
+		7E524C4C1BA50E1700565052 /* CervicapraThomasinaeSmit.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = CervicapraThomasinaeSmit.jpg; path = Images/CervicapraThomasinaeSmit.jpg; sourceTree = "<group>"; };
+		7E524C4D1BA50E1700565052 /* ChirogaleusMiliiSmit.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = ChirogaleusMiliiSmit.jpg; path = Images/ChirogaleusMiliiSmit.jpg; sourceTree = "<group>"; };
+		7E524C4E1BA50E1700565052 /* Chlorophonia_flavirostris.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Chlorophonia_flavirostris.jpg; path = Images/Chlorophonia_flavirostris.jpg; sourceTree = "<group>"; };
+		7E524C4F1BA50E1700565052 /* DendrohyraxEminiSmit.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = DendrohyraxEminiSmit.jpg; path = Images/DendrohyraxEminiSmit.jpg; sourceTree = "<group>"; };
+		7E524C501BA50E1700565052 /* HerpestesFerrugineusSmit.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = HerpestesFerrugineusSmit.jpg; path = Images/HerpestesFerrugineusSmit.jpg; sourceTree = "<group>"; };
+		7E524C511BA50E1700565052 /* HolacanthusIgnatiusSmit.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = HolacanthusIgnatiusSmit.jpg; path = Images/HolacanthusIgnatiusSmit.jpg; sourceTree = "<group>"; };
+		7E524C521BA50E1700565052 /* Hypothymis_coelestis_coelestis_Smit.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Hypothymis_coelestis_coelestis_Smit.jpg; path = Images/Hypothymis_coelestis_coelestis_Smit.jpg; sourceTree = "<group>"; };
 		7EFC97831BA4E04800DAA4E4 /* SneakPeekScroll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SneakPeekScroll.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EFC97861BA4E04800DAA4E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7EFC97881BA4E04800DAA4E4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,7 +82,6 @@
 		7EFC97851BA4E04800DAA4E4 /* SneakPeekScroll */ = {
 			isa = PBXGroup;
 			children = (
-				7E524C2E1BA509D700565052 /* Images */,
 				7EFC97861BA4E04800DAA4E4 /* AppDelegate.swift */,
 				7E524C321BA50B2600565052 /* ContentView.swift */,
 				7EFC97A01BA4EA7400DAA4E4 /* iiAutoLayout.swift */,
@@ -75,6 +92,16 @@
 				7EFC978D1BA4E04800DAA4E4 /* Assets.xcassets */,
 				7EFC978F1BA4E04800DAA4E4 /* LaunchScreen.storyboard */,
 				7EFC97921BA4E04800DAA4E4 /* Info.plist */,
+				7E524C491BA50E1700565052 /* AcanthochoerusGroteiSmit.jpg */,
+				7E524C4A1BA50E1700565052 /* AnthusButleriSmit.jpg */,
+				7E524C4B1BA50E1700565052 /* BradypterusSylvaticusSmit.jpg */,
+				7E524C4C1BA50E1700565052 /* CervicapraThomasinaeSmit.jpg */,
+				7E524C4D1BA50E1700565052 /* ChirogaleusMiliiSmit.jpg */,
+				7E524C4E1BA50E1700565052 /* Chlorophonia_flavirostris.jpg */,
+				7E524C4F1BA50E1700565052 /* DendrohyraxEminiSmit.jpg */,
+				7E524C501BA50E1700565052 /* HerpestesFerrugineusSmit.jpg */,
+				7E524C511BA50E1700565052 /* HolacanthusIgnatiusSmit.jpg */,
+				7E524C521BA50E1700565052 /* Hypothymis_coelestis_coelestis_Smit.jpg */,
 			);
 			path = SneakPeekScroll;
 			sourceTree = "<group>";
@@ -136,10 +163,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E524C2F1BA509D700565052 /* Images in Resources */,
 				7EFC97911BA4E04800DAA4E4 /* LaunchScreen.storyboard in Resources */,
+				7E524C5B1BA50E1700565052 /* HolacanthusIgnatiusSmit.jpg in Resources */,
+				7E524C551BA50E1700565052 /* BradypterusSylvaticusSmit.jpg in Resources */,
+				7E524C5C1BA50E1700565052 /* Hypothymis_coelestis_coelestis_Smit.jpg in Resources */,
+				7E524C591BA50E1700565052 /* DendrohyraxEminiSmit.jpg in Resources */,
+				7E524C561BA50E1700565052 /* CervicapraThomasinaeSmit.jpg in Resources */,
+				7E524C581BA50E1700565052 /* Chlorophonia_flavirostris.jpg in Resources */,
+				7E524C541BA50E1700565052 /* AnthusButleriSmit.jpg in Resources */,
+				7E524C531BA50E1700565052 /* AcanthochoerusGroteiSmit.jpg in Resources */,
 				7EFC978E1BA4E04800DAA4E4 /* Assets.xcassets in Resources */,
+				7E524C571BA50E1700565052 /* ChirogaleusMiliiSmit.jpg in Resources */,
 				7EFC978C1BA4E04800DAA4E4 /* Main.storyboard in Resources */,
+				7E524C5A1BA50E1700565052 /* HerpestesFerrugineusSmit.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
