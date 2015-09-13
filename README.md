@@ -16,3 +16,7 @@ This is a demo iOS app written in Swift. It shows how to use images in a scroll 
 ## License
 
 The demo is released under the [MIT License](LICENSE).
+
+## Feedback is welcome
+
+If you notice any issue, got stuck or just want to chat feel free to create an issue. I will be happy to help you.
