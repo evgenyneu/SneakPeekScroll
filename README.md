@@ -5,7 +5,7 @@ This is a demo iOS app written in Swift. It shows how to use images in a scroll 
 * Scroll view lets you scroll through the images in a paged manner.
 * Scrolling stops at the current image showing a portion of the next and previous images.
 * Uses Auto Layout.
-* Keeps the current scroll view page during device orientation change.
+* Keeps the current scroll view page visible during device orientation change.
 
 <img src='https://raw.githubusercontent.com/evgenyneu/SneakPeekScroll/master/graphics/sneek_peek_scroll_view_screenshot_ios.png' alt='Sneak peek scroll view for iOS' width='375'>
 
